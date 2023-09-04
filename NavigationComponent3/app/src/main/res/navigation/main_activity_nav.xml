@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/ikinciEkranaGecis">
+
+    <fragment
+        android:id="@+id/ikinciEkranaGecis"
+        android:name="com.example.navigationcomponent3.AnaSayfaFragment"
+        android:label="fragment_ana_sayfa"
+        tools:layout="@layout/fragment_ana_sayfa" >
+        <action
+            android:id="@+id/ikinciEkranaGecis1"
+            app:destination="@id/sonucEkraniGecis"
+            app:popEnterAnim="@android:anim/accelerate_decelerate_interpolator" />
+    </fragment>
+    <fragment
+        android:id="@+id/sonucEkraniGecis"
+        android:name="com.example.navigationcomponent3.IkinciFragment"
+        android:label="fragment_ikinci"
+        tools:layout="@layout/fragment_ikinci" >
+        <action
+            android:id="@+id/sonucEkraniGecis1"
+            app:destination="@id/sonucFragment"
+            app:popExitAnim="@android:anim/bounce_interpolator" />
+        <argument
+            android:name="ad"
+            app:argType="string"
+            android:defaultValue="Can" />
+        <argument
+            android:name="soyad"
+            app:argType="string"
+            android:defaultValue="Silaci" />
+        <argument
+            android:name="yas"
+            app:argType="integer"
+            android:defaultValue="25" />
+        <argument
+            android:name="nesne"
+            app:argType="com.example.navigationcomponent3.Kisiler" />
+    </fragment>
+    <fragment
+        android:id="@+id/sonucFragment"
+        android:name="com.example.navigationcomponent3.SonucFragment"
+        android:label="fragment_sonuc"
+        tools:layout="@layout/fragment_sonuc" />
+</navigation>
